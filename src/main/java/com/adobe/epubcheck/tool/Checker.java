@@ -23,11 +23,27 @@
 
 package com.adobe.epubcheck.tool;
 
+import hr.tvz.services.StorageService;
+import hr.tvz.storage.StorageProperties;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+
+@ComponentScan(basePackages = {"hr.tvz"})
+@SpringBootApplication
+@EnableConfigurationProperties(StorageProperties.class)
 public class Checker
 {
-  public static void main(String[] args)
-  {
-    EpubChecker checker = new EpubChecker();
-    System.exit(checker.run(args));
-  }
+    public static void main(String[] args) {
+        SpringApplication.run(Checker.class, args);
+
+    }
+
+    @Bean
+    CommandLineRunner init(StorageService storageService) {
+        return (args) -> storageService.init();
+    }
 }

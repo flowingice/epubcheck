@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Validator</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta content="mmisic" name="author">
+</head>
+<body>
+
+<div id="main-wrapper">
+
+    <div>
+        <form action="/upload" enctype="multipart/form-data" id="form" method="POST">
+
+            File to upload:
+            <input class="form-control form-control-file" name="file" type="file"/>
+            <input class="btn btn-primary" type="submit" value="Upload"/>
+
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
+<!--mmisic-->

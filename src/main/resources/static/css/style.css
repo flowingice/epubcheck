@@ -1,0 +1,12 @@
+#main-wrapper {
+    width: 80%;
+    padding: 20px 30px;
+}
+
+#form {
+    max-width: 550px;
+}
+
+.btn {
+    margin-top: 10px;
+}
